@@ -1,0 +1,165 @@
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #fae1dd;
+}
+
+.container {
+    position: relative;
+}
+
+.valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+/* Bigger envelope */
+.envelope {
+    position: relative;
+    width: 500px; /* Increased from 400px */
+    height: 320px; /* Increased from 250px */
+    background: #f08080;
+    display: grid;
+    place-items: center;
+}
+
+/* Improved top-left flap for a perfect envelope shape */
+.envelope::before {
+    content: '';
+    position: absolute;
+    width: 352px; /* Adjusted for size */
+    height: 352px;
+    background: #f08080;
+    transform: rotate(45deg);
+    top: -175px; /* Adjusted */
+    left: 74px; /* Adjusted */
+    border-radius: 30px 0 0 0;
+}
+
+/* Improved front fold */
+.front {
+    position: absolute;
+    border-right: 300px solid #f4978e;
+    border-top: 160px solid transparent;
+    border-bottom: 160px solid transparent;
+    left: 200px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+/* Adjusted front top flap */
+.front::before {
+    position: absolute;
+    content: '';
+    border-left: 500px solid #fda996;
+    border-top: 320px solid transparent;
+    left: -200px;
+    top: -160px;
+}
+
+/* Bigger card */
+.card {
+    position: relative;
+    width: 420px; /* Increased from 330px */
+    height: 280px; /* Increased from 220px */
+    background: #f7f5dff3;
+    border-radius: 2px;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px dashed #003049;
+}
+
+/* Adjusted hover effect to match new size */
+.valentines:hover .card {
+    transform: translateY(-200px);
+}
+
+.card .text {
+    font-family: "Bad Script", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    line-height: 28px;
+    color: #003049;
+    padding: 20px;
+}
+
+/* Adjusted heart size */
+.card .heart {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background: red;
+    bottom: 20px;
+    transform: rotate(45deg);
+    border-radius: 50% 0 0 50%;
+}
+
+.card .heart::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    border-radius: 0 50% 50% 0;
+    right: 0;
+    transform: rotate(-90deg);
+    transform-origin: top;
+}
+
+.card .heart::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    right: -22px;
+}
+
+/* Floating animation */
+@keyframes up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Adjusted shadow */
+.valentines::before {
+    content: '';
+    position: absolute;
+    width: 550px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    top: 400px;
+    left: -25px;
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.85);
+    }
+}
