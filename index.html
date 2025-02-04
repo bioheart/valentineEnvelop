@@ -27,4 +27,15 @@
         </div>
     </div>
 </body>
+<script>
+    const targetElement = document.getElementsByClassName('valentines');
+    if (targetElement) {
+        targetElement[0].addEventListener('click', function () {
+            this.classList.toggle('clicked');
+        });
+    }
+    else {
+        console.log("can't find the element");
+    }
+</script>
 </html>

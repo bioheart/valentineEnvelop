@@ -90,6 +90,10 @@ body {
     transform: translateY(-200px);
 }
 
+.valentines.clicked .card {
+    transform: translateY(-200px);
+}
+
 .card .text {
     font-family: "Bad Script", serif;
     font-weight: 400;
